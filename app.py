@@ -1,4 +1,5 @@
 import streamlit as st
+import base64  # Import the base64 module
 from vipas import model
 from vipas.exceptions import UnauthorizedException, NotFoundException, ClientException
 from vipas.logger import LoggerClient
@@ -9,7 +10,7 @@ logger = LoggerClient(__name__)
 
 def main():
     # Set up the Streamlit interface
-    st.title('VIPAS AI Model Prediction')
+    st.title('Real_Time_Threat_Detction')
     
     # Input for the image data
     uploaded_file = st.file_uploader("Upload an image", type=["jpg", "jpeg", "png"])
@@ -23,7 +24,7 @@ def main():
             input_data = base64.b64encode(image_data).decode('utf-8')
             
             try:
-                model_id = "mdl-XXXXXXXXXX"  # Replace with your model ID
+                model_id = "mdl-egd1sfadhctl3"  # Replace with your model ID
                 
                 # Make a prediction
                 api_response = vps_model_client.predict(
